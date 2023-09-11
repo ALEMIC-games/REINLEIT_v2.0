@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfog34f3koivk"]
+
+[ext_resource type="Script" path="res://Bitr.gd" id="1_xxkg6"]
+[ext_resource type="FontFile" uid="uid://bbi5f05orvf7" path="res://free-monospaced1.otf" id="2_pphiu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sffwt"]
+font = ExtResource("2_pphiu")
+font_size = 32
+font_color = Color(0.423529, 0.976471, 0.839216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3sxh"]
+
+[node name="Bitr" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxkg6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 56.0
+offset_right = 1148.0
+offset_bottom = 169.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 91.0
+offset_right = 1143.0
+offset_bottom = 128.0
+text = "Ничего страшного еслин е получилось победить в первый раз! Попробуй ещё раз, всё должно получится!"
+label_settings = SubResource("LabelSettings_sffwt")
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 137.0
+offset_right = 2011.0
+offset_bottom = 174.0
+text = "Click to any key to continue..."
+label_settings = SubResource("LabelSettings_e3sxh")

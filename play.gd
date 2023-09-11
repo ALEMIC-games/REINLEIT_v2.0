@@ -1,0 +1,21 @@
+extends Node
+
+func _on_timer_timeout():
+	Core.loading()
+	Settings.loading()
+	PlayerParametrs.loading()
+	Triggers.loading()
+	MapGenerator.loading()
+	GameMenu.loading()
+	Menu.loading()
+	Inventory.loading()
+	GameScene.loading()
+	Zoom.loading()
+	AccountSystem.loading()
+	SaveLoadSystem.loading()
+	UiPlayerActives.loading()
+	UiPlayerMap.loading()
+	Transition.loading()
+	Console.loading()
+	UiPlayerQuestions.loading()
+	$Timer.queue_free()

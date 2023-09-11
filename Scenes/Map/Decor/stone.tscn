@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://nvnkjn0mqj3q"]
+
+[ext_resource type="Texture2D" uid="uid://bopsmdgl723os" path="res://Resources/ydy.png" id="1_k63dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j64jq"]
+size = Vector2(172, 117)
+
+[node name="Stone" type="Sprite2D" groups=["Collider"]]
+z_index = 1
+texture = ExtResource("1_k63dk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14, 3.5)
+shape = SubResource("RectangleShape2D_j64jq")

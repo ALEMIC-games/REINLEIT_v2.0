@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bycivbuerov0a"]
+
+[ext_resource type="Texture2D" uid="uid://dkba8ivt3alqo" path="res://Resources/Pictures/Decor Assets/Terrain_3.png" id="1_je3il"]
+
+[node name="Terrain" type="Sprite2D"]
+self_modulate = Color(0.745098, 0.984314, 0.839216, 1)
+texture = ExtResource("1_je3il")

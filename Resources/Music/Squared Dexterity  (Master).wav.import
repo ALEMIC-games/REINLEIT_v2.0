@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://da3icd5f85uqk"
+path="res://.godot/imported/Squared Dexterity  (Master).wav-dd7a2ed59aa24ec708563f5d2ac96dba.sample"
+
+[deps]
+
+source_file="res://Resources/Music/Squared Dexterity  (Master).wav"
+dest_files=["res://.godot/imported/Squared Dexterity  (Master).wav-dd7a2ed59aa24ec708563f5d2ac96dba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2kbbli53i7yd"]
+
+[ext_resource type="Script" path="res://Core/UI Player Map.gd" id="1_ht05a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doen7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_itm13"]
+Panel/styles/panel = SubResource("StyleBoxFlat_doen7")
+
+[node name="UI Player Map" type="CanvasLayer"]
+script = ExtResource("1_ht05a")
+
+[node name="MiniMap" type="Panel" parent="." groups=["hidden"]]
+visible = false
+self_modulate = Color(0.0156863, 0.113725, 0.0705882, 0.419608)
+custom_minimum_size = Vector2(256, 256)
+offset_left = 1642.0
+offset_top = 794.0
+offset_right = 1898.0
+offset_bottom = 1050.0
+theme = SubResource("Theme_itm13")

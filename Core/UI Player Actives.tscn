@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=3 uid="uid://h8d5kv3i4cj3"]
+
+[ext_resource type="Script" path="res://Core/UI Player Actives.gd" id="1_o81o2"]
+[ext_resource type="Theme" uid="uid://ytlo6rtcwotl" path="res://Resources/themes/ui_player.tres" id="1_rwc11"]
+[ext_resource type="Texture2D" uid="uid://y3ww2dape7ry" path="res://Resources/132.png" id="2_o0w5m"]
+[ext_resource type="Texture2D" uid="uid://vpyjppv24ey" path="res://Resources/Border_bar.png" id="3_awbhc"]
+[ext_resource type="Theme" uid="uid://dkaxoemg8qvjf" path="res://Resources/themes/mp_bar.tres" id="4_77t72"]
+[ext_resource type="FontFile" uid="uid://bbi5f05orvf7" path="res://Resources/fonts/free-monospaced1.otf" id="5_4ggyp"]
+[ext_resource type="Theme" uid="uid://4e4v17rw2tsv" path="res://Resources/themes/hp_bar.tres" id="6_ojc7g"]
+[ext_resource type="Texture2D" uid="uid://cuhmgg4a6lssw" path="res://Resources/1324.png" id="7_huwvt"]
+[ext_resource type="Texture2D" uid="uid://bv6vg6kp43wms" path="res://Resources/Coin.png" id="8_7few3"]
+
+[sub_resource type="GDScript" id="GDScript_b0uti"]
+script/source = "extends ProgressBar
+
+func change(current_health : int, health : int) -> void:
+	max_value = health
+	value = current_health
+	$Label.text = str(value) + ' / ' + str(health)
+"
+
+[node name="UI Player Actives" type="CanvasLayer"]
+script = ExtResource("1_o81o2")
+
+[node name="UI" type="Control" parent="." groups=["hidden"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 264.0
+offset_top = 863.0
+offset_right = 304.0
+offset_bottom = 903.0
+
+[node name="5" type="Panel" parent="UI"]
+self_modulate = Color(0.384314, 0.384314, 0.384314, 1)
+layout_mode = 0
+offset_left = -130.0
+offset_top = -32.0
+offset_right = -10.0
+offset_bottom = 88.0
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/5"]
+self_modulate = Color(0.976471, 0.976471, 0.976471, 1)
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("2_o0w5m")
+
+[node name="6" type="Panel" parent="UI"]
+self_modulate = Color(0.364706, 0.364706, 0.364706, 1)
+layout_mode = 0
+offset_left = -13.0
+offset_top = -17.0
+offset_right = 507.0
+offset_bottom = 73.0
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/6"]
+self_modulate = Color(0.443137, 0.443137, 0.443137, 1)
+layout_mode = 0
+offset_right = 520.0
+offset_bottom = 89.0
+texture = ExtResource("3_awbhc")
+expand_mode = 1
+
+[node name="Mp" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 29.0
+offset_right = 441.0
+offset_bottom = 53.0
+theme = ExtResource("4_77t72")
+value = 100.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="UI/Mp"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 349.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("5_4ggyp")
+theme_override_font_sizes/font_size = 17
+text = "100 - 100
+"
+horizontal_alignment = 1
+
+[node name="0" type="Panel" parent="UI"]
+self_modulate = Color(0.117647, 0.117647, 0.117647, 1)
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 0
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+rotation = 0.785398
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/0"]
+self_modulate = Color(0.47451, 0.47451, 0.47451, 1)
+layout_mode = 0
+offset_right = 134.0
+offset_bottom = 139.0
+texture = ExtResource("2_o0w5m")
+
+[node name="Hp" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 491.0
+offset_bottom = 26.0
+theme = ExtResource("6_ojc7g")
+value = 100.0
+show_percentage = false
+script = SubResource("GDScript_b0uti")
+
+[node name="Label" type="Label" parent="UI/Hp"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_4ggyp")
+theme_override_font_sizes/font_size = 26
+text = "100 - 100
+"
+horizontal_alignment = 1
+
+[node name="1" type="Panel" parent="UI"]
+self_modulate = Color(0.192157, 0.192157, 0.192157, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -70.0
+offset_top = -125.0
+offset_right = 30.0
+offset_bottom = -25.0
+rotation = 0.785398
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/1"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_o0w5m")
+
+[node name="Selection" type="TextureRect" parent="UI/1"]
+visible = false
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("7_huwvt")
+
+[node name="2" type="Panel" parent="UI"]
+self_modulate = Color(0.192157, 0.192157, 0.192157, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -70.0
+offset_top = 35.0
+offset_right = 30.0
+offset_bottom = 135.0
+rotation = 0.785398
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o0w5m")
+
+[node name="3" type="Panel" parent="UI"]
+self_modulate = Color(0.192157, 0.192157, 0.192157, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -151.289
+offset_top = -43.0
+offset_right = -51.2893
+offset_bottom = 57.0
+rotation = 0.785398
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o0w5m")
+
+[node name="4" type="Panel" parent="UI"]
+self_modulate = Color(0.192157, 0.192157, 0.192157, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 8.71069
+offset_top = -43.0
+offset_right = 108.711
+offset_bottom = 57.0
+rotation = 0.785398
+theme = ExtResource("1_rwc11")
+
+[node name="TextureRect" type="TextureRect" parent="UI/4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o0w5m")
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+self_modulate = Color(0.223529, 1, 1, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 75.0
+offset_right = 109.0
+offset_bottom = 175.0
+texture = ExtResource("8_7few3")
+
+[node name="Label" type="Label" parent="UI/TextureRect"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 33.0
+offset_right = 136.0
+offset_bottom = 59.0
+text = "123"

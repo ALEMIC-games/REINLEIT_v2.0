@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfog34f3koivk"]
+
+[ext_resource type="Script" path="res://Bitr.gd" id="1_xxkg6"]
+[ext_resource type="FontFile" uid="uid://bbi5f05orvf7" path="res://free-monospaced1.otf" id="2_pphiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4exqr"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.329412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_t2jws"]
+Panel/styles/panel = SubResource("StyleBoxFlat_4exqr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sffwt"]
+font = ExtResource("2_pphiu")
+font_size = 32
+font_color = Color(0.423529, 0.976471, 0.839216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3sxh"]
+
+[node name="Bitr" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxkg6")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1400, 300)
+layout_mode = 0
+offset_left = -700.0
+offset_top = -150.0
+offset_right = 700.0
+offset_bottom = 150.0
+theme = SubResource("Theme_t2jws")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 1372.0
+offset_bottom = 367.0
+text = "Добро пожаловать в замечательную демку! А теперь начнём, найди меня, голос, что шепчет тебе извне."
+label_settings = SubResource("LabelSettings_sffwt")
+autowrap_mode = 2
+
+[node name="Hint" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 333.0
+offset_right = 2211.0
+offset_bottom = 370.0
+text = "Click to any key to continue..."
+label_settings = SubResource("LabelSettings_e3sxh")

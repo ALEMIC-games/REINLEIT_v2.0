@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://coli4whiveyvx"]
+
+[ext_resource type="Script" path="res://Objects/Unit_1.gd" id="1_yhh7d"]
+[ext_resource type="PackedScene" uid="uid://ug1s2nn60coe" path="res://Objects/unit_script.tscn" id="2_74x6e"]
+[ext_resource type="Texture2D" uid="uid://q22eukw8yiop" path="res://Resources/icon.svg" id="2_qb6gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmvgy"]
+size = Vector2(131.5, 21)
+
+[node name="Unit_1" type="CharacterBody2D" groups=["Eneme", "target_object"]]
+script = ExtResource("1_yhh7d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.25, 8.5)
+shape = SubResource("RectangleShape2D_tmvgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -21.5)
+scale = Vector2(1, 0.664063)
+texture = ExtResource("2_qb6gm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -99.0
+offset_right = 103.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960784, 0.490196, 0.623529, 0.270588)
+
+[node name="Unit_Script" parent="." instance=ExtResource("2_74x6e")]

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://beh3wauxhw6ky"]
+
+[ext_resource type="Shader" path="res://Testing/PromoScene_1.gdshader" id="1_0t3xy"]
+
+[resource]
+shader = ExtResource("1_0t3xy")
+shader_parameter/draw_speed = 0.5

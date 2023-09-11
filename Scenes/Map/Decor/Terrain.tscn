@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b365t72p06myi"]
+
+[ext_resource type="Texture2D" uid="uid://dlfkgo7r1y1pc" path="res://Resources/asdsadadd.png" id="1_n5405"]
+
+[node name="Terrain" type="Sprite2D"]
+self_modulate = Color(0.847059, 0.988235, 0.427451, 1)
+texture = ExtResource("1_n5405")

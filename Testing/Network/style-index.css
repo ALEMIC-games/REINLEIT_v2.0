@@ -1,0 +1,73 @@
+:root {
+  background-color: rgb(10,20,60);
+  background-image: url(bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+}
+
+p::selection {
+  background-color: white;
+  color: rgb(10,10,10);
+}
+
+body {
+  border: 1px solid rgb(5,5,15);
+  width: 1200px;
+  height: 1500px;
+  background-color: rgb(60, 60, 60);
+  box-sizing: border-box;
+  margin-left: 5em;
+  margin-top: 5em;
+}
+
+.list-link {
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-family: Arial;
+  color: rgb(0,255,255);
+  text-decoration: none;
+}
+
+.list-link:hover {
+  color: red
+}
+
+div#list-pages {
+  background: grey;
+  border: 1px solid;
+  width: 400px;
+  height: 100px;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+div#list-background {
+  border: 1px solid rgb(5,5,15);
+  width: 230px;
+  height: 500px;
+  background-color: rgb(100, 100, 100);
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+p#list-title {
+  color: rgb(255, 255, 220);
+  font-size: 28px;
+  font-family: Arial;
+  text-align: center;
+}
+
+div#panel {
+  border: 1px solid rgb(5,5,15);
+  width: 1130px;
+  height: 80px;
+  background-color: rgb(100, 100, 100);
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 2em;
+  margin-left: 2em;
+}

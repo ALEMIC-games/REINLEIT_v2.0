@@ -1,0 +1,77 @@
+[gd_scene load_steps=21 format=3 uid="uid://dgookhuvkf6sd"]
+
+[ext_resource type="Script" path="res://Core/Core.gd" id="1_mb433"]
+[ext_resource type="PackedScene" uid="uid://bpd45lelnxqww" path="res://Core/GameScene.tscn" id="2_bh5k5"]
+[ext_resource type="PackedScene" uid="uid://thh76ls1ajdx" path="res://Core/Settings.tscn" id="2_d6gw1"]
+[ext_resource type="PackedScene" uid="uid://b6g7qg2s353qj" path="res://Core/Triggers.tscn" id="2_imr4x"]
+[ext_resource type="PackedScene" uid="uid://b7miwxid0f8fh" path="res://Scenes/Map/Map_Generator.tscn" id="2_qtl2k"]
+[ext_resource type="PackedScene" uid="uid://dumllfet56ecl" path="res://Core/Globals.tscn" id="2_qwl0p"]
+[ext_resource type="Script" path="res://Core/Script Nodes.gd" id="2_yud2v"]
+[ext_resource type="PackedScene" uid="uid://dkivptvx7j8o2" path="res://Core/Menu.tscn" id="3_ele00"]
+[ext_resource type="Script" path="res://Core/Settings.gd" id="3_hxdmc"]
+[ext_resource type="PackedScene" uid="uid://cr0unuqth0ehr" path="res://Core/Intro.tscn" id="4_6l8me"]
+[ext_resource type="PackedScene" uid="uid://dfog34f3koivk" path="res://Core/SystemInteraction.tscn" id="5_cd3nc"]
+[ext_resource type="PackedScene" uid="uid://h8d5kv3i4cj3" path="res://Core/UI Player Actives.tscn" id="5_oquvn"]
+[ext_resource type="PackedScene" uid="uid://lhxtb204hi8o" path="res://Core/Save Load System.tscn" id="5_pyqla"]
+[ext_resource type="PackedScene" uid="uid://n8b2vxvod4o0" path="res://Core/Account System.tscn" id="5_qbwcp"]
+[ext_resource type="PackedScene" uid="uid://blsywhskityyw" path="res://Core/Zoom.tscn" id="5_thgo0"]
+[ext_resource type="PackedScene" uid="uid://c1043snn0x8hi" path="res://Core/Player Parametrs.tscn" id="5_yil8f"]
+[ext_resource type="PackedScene" uid="uid://d3qa71tvq6j55" path="res://Core/GameMenu.tscn" id="6_mrh7q"]
+[ext_resource type="PackedScene" uid="uid://b2kbbli53i7yd" path="res://Core/UI Player Map.tscn" id="6_nvv68"]
+[ext_resource type="PackedScene" uid="uid://b1xw6yds6qt8w" path="res://Core/Transition.tscn" id="7_6yt4f"]
+[ext_resource type="PackedScene" uid="uid://0f7qd0xq2s43" path="res://Core/Console.tscn" id="10_o5rb6"]
+
+[node name="Core" type="Node2D"]
+script = ExtResource("1_mb433")
+test = true
+
+[node name="Script Nodes" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("2_yud2v")
+
+[node name="Settings" parent="Script Nodes" instance=ExtResource("2_d6gw1")]
+script = ExtResource("3_hxdmc")
+
+[node name="Globals" parent="Script Nodes" instance=ExtResource("2_qwl0p")]
+
+[node name="Triggers" parent="Script Nodes" instance=ExtResource("2_imr4x")]
+
+[node name="Content Layer" type="Node2D" parent="."]
+
+[node name="Map_Generator" parent="Content Layer" instance=ExtResource("2_qtl2k")]
+
+[node name="GameScene" parent="Content Layer" instance=ExtResource("2_bh5k5")]
+
+[node name="Menu" parent="Content Layer" instance=ExtResource("3_ele00")]
+
+[node name="Intro" parent="Content Layer" instance=ExtResource("4_6l8me")]
+
+[node name="Game Moduls" type="Node2D" parent="."]
+
+[node name="Player Parametrs" parent="Game Moduls" instance=ExtResource("5_yil8f")]
+
+[node name="SaveLoad System" parent="Game Moduls" instance=ExtResource("5_pyqla")]
+
+[node name="Account System" parent="Game Moduls" instance=ExtResource("5_qbwcp")]
+
+[node name="Zoom" parent="Game Moduls" instance=ExtResource("5_thgo0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="UI Player Actives" parent="CanvasLayer" instance=ExtResource("5_oquvn")]
+visible = false
+
+[node name="UI Player Map" parent="CanvasLayer" instance=ExtResource("6_nvv68")]
+visible = false
+
+[node name="SystemInteraction" parent="CanvasLayer" instance=ExtResource("5_cd3nc")]
+visible = false
+
+[node name="GameMenu" parent="CanvasLayer" instance=ExtResource("6_mrh7q")]
+visible = false
+
+[node name="Transition" parent="CanvasLayer" instance=ExtResource("7_6yt4f")]
+
+[node name="Console" parent="CanvasLayer" instance=ExtResource("10_o5rb6")]
+visible = false

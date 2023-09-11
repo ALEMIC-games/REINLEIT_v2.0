@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvws770go02hl"]
+
+[ext_resource type="Script" path="res://Core/Mouse Point.gd" id="1_m3sav"]
+
+[node name="Mouse Point" type="Marker2D"]
+script = ExtResource("1_m3sav")

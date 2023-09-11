@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://db4cacc6t0tn7"]
+
+[ext_resource type="Script" path="res://Objects/NPC_1.gd" id="1_ypx4v"]
+[ext_resource type="PackedScene" uid="uid://gsmr1qcegyjl" path="res://Objects/NPC_Script.tscn" id="2_1usdo"]
+[ext_resource type="Texture2D" uid="uid://q22eukw8yiop" path="res://Resources/icon.svg" id="2_ksl7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icw7w"]
+
+[node name="NPC_1" type="CharacterBody2D"]
+script = ExtResource("1_ypx4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_icw7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.45098, 0.45098, 0.45098, 1)
+position = Vector2(1.90735e-06, -54)
+scale = Vector2(0.71875, 1.01563)
+texture = ExtResource("2_ksl7l")
+
+[node name="NPC_Script" parent="." instance=ExtResource("2_1usdo")]

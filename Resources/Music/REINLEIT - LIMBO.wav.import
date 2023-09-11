@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfqqur7rq1csy"
+path="res://.godot/imported/REINLEIT - LIMBO.wav-735765efa965aca27e21da3f626af4ac.sample"
+
+[deps]
+
+source_file="res://Resources/Music/REINLEIT - LIMBO.wav"
+dest_files=["res://.godot/imported/REINLEIT - LIMBO.wav-735765efa965aca27e21da3f626af4ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

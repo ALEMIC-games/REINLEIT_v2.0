@@ -1,0 +1,185 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqtbg0a4wow6u"]
+
+[ext_resource type="Script" path="res://Core/Inventory.gd" id="1_5giww"]
+[ext_resource type="PackedScene" uid="uid://bw0rg1y18cmwr" path="res://Core/Inventory/ItemSlot.tscn" id="3_0e8qy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds237"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_ba0dy"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ds237")
+
+[sub_resource type="Animation" id="Animation_7qkkc"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/InventoryWindow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/InventoryWindow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fuesl"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/InventoryWindow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/InventoryWindow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_712v2"]
+_data = {
+"close": SubResource("Animation_7qkkc"),
+"open": SubResource("Animation_fuesl")
+}
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_5giww")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = 18.0
+offset_right = 343.0
+offset_bottom = 405.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_ba0dy")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 379.0
+
+[node name="inventory_button" parent="Panel/HBoxContainer" instance=ExtResource("3_0e8qy")]
+layout_mode = 2
+text = "I"
+
+[node name="ui_button2" parent="Panel/HBoxContainer" instance=ExtResource("3_0e8qy")]
+layout_mode = 2
+disabled = true
+text = "?"
+
+[node name="ui_button3" parent="Panel/HBoxContainer" instance=ExtResource("3_0e8qy")]
+layout_mode = 2
+disabled = true
+text = "?"
+
+[node name="ui_button4" parent="Panel/HBoxContainer" instance=ExtResource("3_0e8qy")]
+layout_mode = 2
+disabled = true
+text = "?"
+
+[node name="InventoryWindow" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = -594.0
+offset_right = -13.0
+offset_bottom = 387.0
+
+[node name="Panel" type="Panel" parent="Panel/InventoryWindow"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Panel/InventoryWindow/Panel"]
+layout_mode = 0
+offset_right = 557.0
+offset_bottom = 39.0
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/InventoryWindow"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 28.0
+offset_right = 578.0
+offset_bottom = 384.0
+
+[node name="ItemList" type="GridContainer" parent="Panel/InventoryWindow/ScrollContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="ItemDescription" type="Panel" parent="Panel/InventoryWindow"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = -286.0
+offset_top = -1.0
+offset_right = -4.0
+offset_bottom = 335.0
+
+[node name="Title" type="Label" parent="Panel/InventoryWindow/ItemDescription"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 48.0
+offset_bottom = 36.0
+text = "dsff"
+
+[node name="Description" type="Label" parent="Panel/InventoryWindow/ItemDescription"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 36.0
+offset_right = 59.0
+offset_bottom = 62.0
+text = "sdfsdf"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_712v2")
+}
+
+[connection signal="pressed" from="Panel/HBoxContainer/inventory_button" to="." method="_on_inventory_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

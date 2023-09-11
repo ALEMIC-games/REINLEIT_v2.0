@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpd45lelnxqww"]
+
+[ext_resource type="Script" path="res://Core/GameScene.gd" id="1_tvidm"]
+[ext_resource type="Texture2D" uid="uid://mj023fmbiirf" path="res://Resources/Pictures/Decor Assets/Decor_4.png" id="4_80u4u"]
+[ext_resource type="Texture2D" uid="uid://1mno5hyckn7m" path="res://Resources/Pictures/Decor Assets/Stone_25.png" id="5_a03xc"]
+[ext_resource type="Texture2D" uid="uid://dms4uwnwht5ba" path="res://Resources/Pictures/Decor Assets/Decor_3.png" id="5_c1slk"]
+[ext_resource type="Texture2D" uid="uid://bclejpou6481v" path="res://Resources/Pictures/Decor Assets/Stone_24.png" id="6_nwkl1"]
+[ext_resource type="Texture2D" uid="uid://dwwh1l86hf7nq" path="res://Resources/Pictures/Decor Assets/Gress_1.png" id="6_y5jx4"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_tvidm")
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Stone36" type="Sprite2D" parent="."]
+self_modulate = Color(0.337255, 0.478431, 0.54902, 1)
+position = Vector2(1099, 1401)
+texture = ExtResource("5_a03xc")
+
+[node name="Stone29" type="Sprite2D" parent="."]
+self_modulate = Color(0.478431, 0.529412, 0.596078, 1)
+position = Vector2(2087, 834)
+scale = Vector2(1, 0.859375)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Stone32" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(1408, 734)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Stone33" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(1668, 759)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Stone34" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(2292, 767)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Decor4" type="Sprite2D" parent="."]
+position = Vector2(1869, 259)
+texture = ExtResource("4_80u4u")
+
+[node name="Stone28" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(2198, 989)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+
+[node name="Stone30" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(2198, 989)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+
+[node name="Stone35" type="Sprite2D" parent="."]
+self_modulate = Color(0.603922, 0.705882, 0.72549, 1)
+position = Vector2(2386, 1237)
+texture = ExtResource("5_a03xc")
+
+[node name="Stone31" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(1518, 948)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Stone26" type="Sprite2D" parent="."]
+self_modulate = Color(0.270588, 0.34902, 0.356863, 1)
+position = Vector2(2517, 1256)
+scale = Vector2(1, 1.07705)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Stone27" type="Sprite2D" parent="."]
+self_modulate = Color(0.301961, 0.356863, 0.4, 1)
+position = Vector2(2903, 1178)
+scale = Vector2(1, 1.06445)
+texture = ExtResource("6_nwkl1")
+
+[node name="Decor3" type="Sprite2D" parent="."]
+position = Vector2(2716, 1193)
+texture = ExtResource("5_c1slk")
+
+[node name="Stone24" type="Sprite2D" parent="."]
+self_modulate = Color(0.4, 0.541176, 0.568627, 1)
+position = Vector2(2848, 1385)
+texture = ExtResource("6_nwkl1")
+
+[node name="Stone25" type="Sprite2D" parent="."]
+self_modulate = Color(0.478431, 0.529412, 0.596078, 1)
+position = Vector2(2597, 1472)
+scale = Vector2(1, 0.859375)
+texture = ExtResource("6_nwkl1")
+flip_h = true
+
+[node name="Gress1" type="Sprite2D" parent="."]
+position = Vector2(2702, 1399)
+texture = ExtResource("6_y5jx4")
+
+[node name="Gress2" type="Sprite2D" parent="."]
+self_modulate = Color(0.396078, 0.611765, 0.454902, 1)
+position = Vector2(2571, 1464)
+texture = ExtResource("6_y5jx4")
+flip_h = true

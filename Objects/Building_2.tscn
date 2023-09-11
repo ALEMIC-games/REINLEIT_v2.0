@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr23b46lif67x"]
+
+[ext_resource type="Script" path="res://Objects/Building_1.gd" id="1_es810"]
+[ext_resource type="PackedScene" uid="uid://dj8afb6qslwww" path="res://Objects/Building_Script.tscn" id="2_6d5da"]
+[ext_resource type="Texture2D" uid="uid://cn1ii76mwvm1g" path="res://Resources/RRE.png" id="3_ibxrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxwc1"]
+size = Vector2(210.5, 59)
+
+[node name="Building" type="Node2D"]
+script = ExtResource("1_es810")
+
+[node name="Building_area" type="ColorRect" parent="." groups=["Building_area"]]
+offset_left = -526.0
+offset_top = -288.0
+offset_right = 505.0
+offset_bottom = 448.0
+color = Color(0.964706, 0.819608, 0.615686, 0.160784)
+
+[node name="Building_Script" parent="." instance=ExtResource("2_6d5da")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, 8)
+texture = ExtResource("3_ibxrd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-89, 169, 81, 180, 97, 175, 141, 249, 239, 288, 365, 289, 406, 83, 391, -79, 339, -142, 186, -137, 178, -177, 144, -233, 102, -256, 1, -232, -99, -250, -107, -256, -143, -234, -179, -179, -186, -135, -287, -175, -392, -126, -407, 85, -356, 288, -188, 295, -138, 229)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.25, 203)
+shape = SubResource("RectangleShape2D_jxwc1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -192.0
+offset_top = 44.0
+offset_right = -126.0
+offset_bottom = 108.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx4xglvjw1kps"]
+
+[ext_resource type="Script" path="res://Core/Triggers.gd" id="1_awr4v"]
+
+[node name="Triggers" type="Node"]
+script = ExtResource("1_awr4v")

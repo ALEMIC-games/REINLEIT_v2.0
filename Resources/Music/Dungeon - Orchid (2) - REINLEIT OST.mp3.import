@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqn1kjtgb1co"
+path="res://.godot/imported/Dungeon - Orchid (2) - REINLEIT OST.mp3-076524f4cdbff67a6e877cad898e051b.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Dungeon - Orchid (2) - REINLEIT OST.mp3"
+dest_files=["res://.godot/imported/Dungeon - Orchid (2) - REINLEIT OST.mp3-076524f4cdbff67a6e877cad898e051b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

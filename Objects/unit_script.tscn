@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ug1s2nn60coe"]
+
+[ext_resource type="Script" path="res://Objects/unit_script.gd" id="1_8706y"]
+[ext_resource type="Theme" uid="uid://4e4v17rw2tsv" path="res://Resources/themes/hp_bar.tres" id="2_fl46x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7w11i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phjxp"]
+
+[node name="Unit_Script" type="Node2D"]
+script = ExtResource("1_8706y")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+show_behind_parent = true
+shape = SubResource("CircleShape2D_7w11i")
+
+[node name="CD" type="Timer" parent="."]
+one_shot = true
+
+[node name="Recovery" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -65.0
+offset_top = -91.0
+offset_right = 69.0
+offset_bottom = -64.0
+theme = ExtResource("2_fl46x")
+
+[node name="RangeOfLooking" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeOfLooking"]
+shape = SubResource("CircleShape2D_phjxp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="CD" to="." method="_on_cd_timeout"]
+[connection signal="timeout" from="Recovery" to="." method="_on_recovery_timeout"]

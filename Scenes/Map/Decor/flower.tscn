@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc18fc1ckrwus"]
+
+[ext_resource type="Material" uid="uid://ddo74h4slfh81" path="res://Resources/Shaders/ForestShader.tres" id="1_85175"]
+[ext_resource type="Texture2D" uid="uid://d0hvmai1vb5pq" path="res://Resources/Gress.png" id="1_h5wy6"]
+
+[node name="Flower" type="Sprite2D"]
+material = ExtResource("1_85175")
+texture = ExtResource("1_h5wy6")

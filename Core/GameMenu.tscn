@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3qa71tvq6j55"]
+
+[ext_resource type="Script" path="res://Core/GameMenu.gd" id="1_h3nqj"]
+[ext_resource type="Texture2D" uid="uid://c2tyn6ny00aly" path="res://Resources/MenuBackground.jpg" id="2_xhlsj"]
+[ext_resource type="PackedScene" uid="uid://4p2ruqo7ogn6" path="res://Other/ui_button.tscn" id="3_i25di"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txsp1"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_f88iu"]
+Panel/styles/panel = SubResource("StyleBoxFlat_txsp1")
+
+[node name="GameMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_h3nqj")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0.168627, 0.172549, 0.52549)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_f88iu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.466667, 0.478431, 0.909804)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_xhlsj")
+
+[node name="Continue" parent="." instance=ExtResource("3_i25di")]
+offset_left = 461.0
+offset_top = 135.0
+offset_right = 781.0
+offset_bottom = 215.0
+focus_neighbor_bottom = NodePath("../ReturnToMenu")
+text = "Continue"
+
+[node name="ReturnToMenu" parent="." instance=ExtResource("3_i25di")]
+offset_left = 467.0
+offset_top = 243.0
+offset_right = 787.0
+offset_bottom = 323.0
+focus_neighbor_top = NodePath("../Continue")
+focus_neighbor_bottom = NodePath("../Reference")
+text = "Return to menu"
+
+[node name="Reference" parent="." instance=ExtResource("3_i25di")]
+offset_left = 462.0
+offset_top = 354.0
+offset_right = 782.0
+offset_bottom = 434.0
+focus_neighbor_top = NodePath("../ReturnToMenu")
+focus_neighbor_bottom = NodePath("../Exit from game")
+text = "Reference"
+
+[node name="Exit from game" parent="." instance=ExtResource("3_i25di")]
+offset_left = 464.0
+offset_top = 473.0
+offset_right = 784.0
+offset_bottom = 553.0
+focus_neighbor_top = NodePath("../Reference")
+focus_neighbor_bottom = NodePath(".")
+text = "Exit from game"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="pressed" from="Reference" to="." method="_on_reference_pressed"]
+[connection signal="pressed" from="Exit from game" to="." method="_on_exit_from_game_pressed"]

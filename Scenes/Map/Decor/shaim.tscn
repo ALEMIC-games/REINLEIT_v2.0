@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnnvqixschup3"]
+
+[ext_resource type="Texture2D" uid="uid://bpnc1garwjbx6" path="res://Resources/dasd12321332.png" id="1_xm58s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs28g"]
+size = Vector2(149, 170)
+
+[node name="Shaim" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_xm58s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 100)
+shape = SubResource("RectangleShape2D_hs28g")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6p70sbdkeq4t"]
+
+[ext_resource type="Texture2D" uid="uid://c0rqf3p7c7dsj" path="res://Resources/Pictures/Decor Assets/leaves_2.png" id="1_3qs7q"]
+[ext_resource type="Texture2D" uid="uid://db4h30x4wgf3m" path="res://Resources/Pictures/Decor Assets/leaves_11.png" id="2_aj3gy"]
+[ext_resource type="Texture2D" uid="uid://ca6jndvvupgpp" path="res://Resources/Pictures/Decor Assets/Stone_9.png" id="3_u3io1"]
+[ext_resource type="Texture2D" uid="uid://cfdwvg5nx5nde" path="res://Resources/Pictures/Decor Assets/Stone_3.png" id="4_ne465"]
+[ext_resource type="Texture2D" uid="uid://bns20631kdjoe" path="res://Resources/Pictures/Decor Assets/leaves_4.png" id="5_6ybop"]
+[ext_resource type="Texture2D" uid="uid://dqmc3jbmanv1p" path="res://Resources/Pictures/Decor Assets/leaves_1.png" id="6_0yd8b"]
+[ext_resource type="Texture2D" uid="uid://bxitwvh3tubfg" path="res://Resources/Pictures/Decor Assets/leaves_3.png" id="7_a5ifx"]
+[ext_resource type="Texture2D" uid="uid://c52opqiuw52o6" path="res://Resources/Pictures/Decor Assets/Stone_2.png" id="8_s8wd0"]
+
+[node name="Level_1" type="Node2D"]
+
+[node name="Leaves2" type="Sprite2D" parent="."]
+position = Vector2(467, 233)
+texture = ExtResource("1_3qs7q")
+
+[node name="Leaves11" type="Sprite2D" parent="."]
+position = Vector2(266, 284)
+texture = ExtResource("2_aj3gy")
+
+[node name="Stone9" type="Sprite2D" parent="."]
+self_modulate = Color(0.266667, 0.384314, 0.392157, 1)
+position = Vector2(418, 231)
+texture = ExtResource("3_u3io1")
+
+[node name="Stone3" type="Sprite2D" parent="."]
+position = Vector2(333, 299)
+texture = ExtResource("4_ne465")
+
+[node name="Leaves4" type="Sprite2D" parent="."]
+position = Vector2(279, 323)
+texture = ExtResource("5_6ybop")
+
+[node name="Leaves1" type="Sprite2D" parent="."]
+position = Vector2(444, 399)
+texture = ExtResource("6_0yd8b")
+
+[node name="Leaves3" type="Sprite2D" parent="."]
+position = Vector2(587, 330)
+texture = ExtResource("7_a5ifx")
+
+[node name="Stone2" type="Sprite2D" parent="."]
+self_modulate = Color(0.482353, 0.65098, 0.639216, 1)
+position = Vector2(409, 452)
+texture = ExtResource("8_s8wd0")
+flip_h = true
+flip_v = true
